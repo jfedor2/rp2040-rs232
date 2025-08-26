@@ -1,0 +1,253 @@
+{
+  "jobs": [
+    {
+      "description": "",
+      "id": "0c52b2b9-481c-4f13-9c50-e8b2c35fb4fa",
+      "settings": {
+        "bom_format_preset_name": "CSV",
+        "bom_preset_name": "",
+        "description": "",
+        "exclude_dnp": false,
+        "field_delimiter": ",",
+        "fields_group_by": [
+          "Value"
+        ],
+        "fields_labels": [
+          "Value",
+          "Reference",
+          "Footprint",
+          "Datasheet",
+          "Description",
+          "Qty",
+          "#",
+          "LCSC"
+        ],
+        "fields_ordered": [
+          "Value",
+          "Reference",
+          "Footprint",
+          "__Datasheet",
+          "__Description",
+          "__${QUANTITY}",
+          "__${ITEM_NUMBER}",
+          "LCSC"
+        ],
+        "filter_string": "",
+        "include_excluded_from_bom": false,
+        "keep_line_breaks": false,
+        "keep_tabs": false,
+        "output_filename": "rp2040-rs232-BOM.csv",
+        "ref_delimiter": ",",
+        "ref_range_delimiter": "",
+        "sort_asc": true,
+        "sort_field": "Value",
+        "string_delimiter": "\""
+      },
+      "type": "sch_export_bom"
+    },
+    {
+      "description": "",
+      "id": "b03caea7-2df4-4604-b719-4edad772bcf0",
+      "settings": {
+        "description": "",
+        "exclude_dnp": false,
+        "exclude_footprints_with_th": false,
+        "format": "csv",
+        "gerber_board_edge": true,
+        "negate_bottom_x": false,
+        "output_filename": "rp2040-rs232-CPL.csv",
+        "side": "both",
+        "single_file": true,
+        "smd_only": false,
+        "units": "mm",
+        "use_drill_place_file_origin": true
+      },
+      "type": "pcb_export_pos"
+    },
+    {
+      "description": "",
+      "id": "945f96d1-994b-48d3-9413-83fc86747d2b",
+      "settings": {
+        "black_and_white": true,
+        "create_gerber_job_file": false,
+        "crossout_dnp_footprints_on_fab_layers": false,
+        "description": "",
+        "disable_aperture_macros": false,
+        "drawing_sheet": "",
+        "drill_shape": "none",
+        "hide_dnp_footprints_on_fab_layers": false,
+        "include_netlist_attributes": false,
+        "layers": [
+          "B.Cu",
+          "B.Mask",
+          "B.Paste",
+          "B.SilkS",
+          "In30.Cu",
+          "In29.Cu",
+          "In28.Cu",
+          "In27.Cu",
+          "In26.Cu",
+          "In25.Cu",
+          "In24.Cu",
+          "In23.Cu",
+          "In22.Cu",
+          "In21.Cu",
+          "In20.Cu",
+          "In19.Cu",
+          "In18.Cu",
+          "In17.Cu",
+          "In16.Cu",
+          "In15.Cu",
+          "In14.Cu",
+          "In13.Cu",
+          "In12.Cu",
+          "In11.Cu",
+          "In10.Cu",
+          "In9.Cu",
+          "In8.Cu",
+          "In7.Cu",
+          "In6.Cu",
+          "In5.Cu",
+          "In4.Cu",
+          "In3.Cu",
+          "In2.Cu",
+          "In1.Cu",
+          "F.Cu",
+          "F.Mask",
+          "F.Paste",
+          "F.SilkS",
+          "Edge.Cuts"
+        ],
+        "layers_to_include_on_all_layers": [],
+        "mirror": false,
+        "negative": false,
+        "output_filename": "",
+        "plot_drawing_sheet": false,
+        "plot_footprint_values": true,
+        "plot_pad_numbers": false,
+        "plot_ref_des": true,
+        "precision": 6,
+        "sketch_dnp_footprints_on_fab_layers": false,
+        "sketch_pads_on_fab_layers": false,
+        "subtract_solder_mask_from_silk": true,
+        "use_drill_origin": false,
+        "use_protel_file_extension": true,
+        "use_x2_format": false
+      },
+      "type": "pcb_export_gerbers"
+    },
+    {
+      "description": "",
+      "id": "d12ccb60-e2cb-434b-b60b-301f27914405",
+      "settings": {
+        "description": "",
+        "drill_origin": "abs",
+        "excellon.combine_pth_npth": false,
+        "excellon.minimal_header": false,
+        "excellon.mirror_y": false,
+        "excellon.oval_drill_route": false,
+        "format": "excellon",
+        "generate_map": true,
+        "gerber_precision": 5,
+        "map_format": "gerberx2",
+        "output_dir": "",
+        "units": "mm",
+        "zero_format": "decimal"
+      },
+      "type": "pcb_export_drill"
+    },
+    {
+      "description": "",
+      "id": "8cc8dbc6-2f25-4d23-9cbd-0048001b2eb8",
+      "settings": {
+        "black_and_white": false,
+        "color_theme": "KiCad Classic",
+        "description": "",
+        "drawing_sheet": "",
+        "format": "pdf",
+        "hpgl_page_size": "default",
+        "hpgl_pen_size": 1.016,
+        "hpgl_plot_origin": "A3",
+        "min_pen_width": 847,
+        "output_dir": "",
+        "page_size": "auto",
+        "pdf_hierarchical_links": false,
+        "pdf_metadata": false,
+        "pdf_property_popups": false,
+        "plot_all": true,
+        "plot_drawing_sheet": false,
+        "use_background_color": false
+      },
+      "type": "sch_export_plot_pdf"
+    },
+    {
+      "description": "",
+      "id": "57e120e2-9aa8-4ce3-b862-47d9f37313ea",
+      "settings": {
+        "board_only": false,
+        "board_outlines_chaining_epsilon": 0.01,
+        "cut_vias_in_body": false,
+        "description": "",
+        "export_board_body": true,
+        "export_components": true,
+        "export_inner_copper": false,
+        "export_pads": true,
+        "export_silkscreen": true,
+        "export_soldermask": false,
+        "export_tracks": true,
+        "export_zones": true,
+        "fill_all_vias": false,
+        "format": "step",
+        "fuse_shapes": false,
+        "include_dnp": true,
+        "include_unspecified": true,
+        "occt_format": 0,
+        "optimize_step": true,
+        "output_filename": "rp2040-rs232-pcb.step",
+        "overwrite": true,
+        "subst_models": true,
+        "use_defined_origin": false,
+        "use_drill_origin": false,
+        "use_grid_origin": false,
+        "use_pcb_center_origin": true,
+        "user_origin.x": 145.0,
+        "user_origin.y": 88.2,
+        "vrml_model_dir": "",
+        "vrml_relative_paths": false
+      },
+      "type": "pcb_export_3d"
+    }
+  ],
+  "meta": {
+    "version": 1
+  },
+  "outputs": [
+    {
+      "description": "",
+      "id": "c3f1434d-86de-48b1-9a73-fb2af03b5861",
+      "only": [
+        "0c52b2b9-481c-4f13-9c50-e8b2c35fb4fa",
+        "8cc8dbc6-2f25-4d23-9cbd-0048001b2eb8",
+        "b03caea7-2df4-4604-b719-4edad772bcf0",
+        "57e120e2-9aa8-4ce3-b862-47d9f37313ea"
+      ],
+      "settings": {
+        "output_path": "output"
+      },
+      "type": "folder"
+    },
+    {
+      "description": "",
+      "id": "a22f755e-7774-4476-a4d2-c222cb455482",
+      "only": [
+        "945f96d1-994b-48d3-9413-83fc86747d2b",
+        "d12ccb60-e2cb-434b-b60b-301f27914405"
+      ],
+      "settings": {
+        "format": "zip",
+        "output_path": "output\\rp2040-rs232-gerber.zip"
+      },
+      "type": "archive"
+    }
+  ]
+}

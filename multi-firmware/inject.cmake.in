@@ -1,0 +1,13 @@
+cmake_language(DEFER CALL set_target_properties
+    @TARGET@
+    PROPERTIES
+    PICO_TARGET_LINKER_SCRIPT @GENERATED_LD_SCRIPT@
+)
+
+cmake_language(DEFER CALL target_compile_definitions
+    @TARGET@
+    PUBLIC
+    PICO_FLASH_SIZE_BYTES=16777216
+    PICO_DEFAULT_UART_TX_PIN=28
+    PICO_DEFAULT_UART_RX_PIN=29
+)

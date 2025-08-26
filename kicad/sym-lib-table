@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Type-C")(type "KiCad")(uri "${KIPRJMOD}/Type-C.pretty/Type-C.kicad_sym")(options "")(descr ""))
+  (lib (name "MAX3243")(type "KiCad")(uri "${KIPRJMOD}/MAX3243.pretty/MAX3243.kicad_sym")(options "")(descr ""))
+)

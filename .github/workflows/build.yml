@@ -1,0 +1,34 @@
+name: build
+on:
+  push:
+    paths:
+      - 'multi-firmware/**'
+  workflow_call:
+defaults:
+  run:
+    shell: bash --noprofile --norc -x -e -o pipefail {0}
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: Fetch submodules in submodules
+        run: |
+          for submodule in hid-remapper magellan-spacemouse spaceball-2003 pico-uart-bridge; do cd $submodule; git submodule update --init; cd ..; done
+        working-directory: ./multi-firmware
+      - name: Install compiler, libraries and tools
+        run: |
+          sudo apt update
+          sudo apt install -y --no-install-recommends gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
+      - name: Build
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make
+        working-directory: ./multi-firmware
+      - uses: actions/upload-artifact@v4
+        with:
+          path: multi-firmware/build/multi-firmware.uf2

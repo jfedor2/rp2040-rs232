@@ -1,0 +1,15 @@
+[submodule "multi-firmware/magellan-spacemouse"]
+	path = multi-firmware/magellan-spacemouse
+	url = https://github.com/jfedor2/magellan-spacemouse.git
+[submodule "multi-firmware/spaceball-2003"]
+	path = multi-firmware/spaceball-2003
+	url = https://github.com/jfedor2/spaceball-2003.git
+[submodule "multi-firmware/pico-sdk"]
+	path = multi-firmware/pico-sdk
+	url = https://github.com/raspberrypi/pico-sdk.git
+[submodule "multi-firmware/pico-uart-bridge"]
+	path = multi-firmware/pico-uart-bridge
+	url = https://github.com/jfedor2/pico-uart-bridge.git
+[submodule "multi-firmware/hid-remapper"]
+	path = multi-firmware/hid-remapper
+	url = https://github.com/jfedor2/hid-remapper.git
