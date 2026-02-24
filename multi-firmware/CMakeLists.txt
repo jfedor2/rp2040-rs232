@@ -32,6 +32,7 @@ function(setup_relocated_pico_app SUBPROJECT_DIR TARGET FLASH_ORIGIN FLASH_LENGT
         COMMAND ${CMAKE_COMMAND} -S ${SUBPROJECT_DIR} -B ${SUBPROJECT_BINARY_DIR} -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=${GENERATED_CMAKE_INJECT}
         COMMAND ${CMAKE_COMMAND} --build ${SUBPROJECT_BINARY_DIR} --target ${TARGET}
         DEPENDS ${GENERATED_LD_SCRIPT} ${GENERATED_CMAKE_INJECT}
+        BYPRODUCTS "${SUBPROJECT_BINARY_DIR}/${TARGET}.bin"
         COMMENT "Building ${TARGET} from ${SUBPROJECT_DIR}..."
     )
 endfunction()
@@ -79,7 +80,12 @@ add_custom_command(
         --image spaceball/spaceball.bin@${APP2_OFFSET}
         --image magellan/magellan.bin@${APP3_OFFSET}
         --image uart_bridge/uart_bridge.bin@${APP4_OFFSET}
-    DEPENDS dispatcher remapper_serial spaceball magellan uart_bridge
+    DEPENDS
+        dispatcher "${CMAKE_CURRENT_BINARY_DIR}/dispatcher.bin"
+        remapper_serial "${CMAKE_CURRENT_BINARY_DIR}/remapper_serial/remapper_serial.bin"
+        spaceball "${CMAKE_CURRENT_BINARY_DIR}/spaceball/spaceball.bin"
+        magellan "${CMAKE_CURRENT_BINARY_DIR}/magellan/magellan.bin"
+        uart_bridge "${CMAKE_CURRENT_BINARY_DIR}/uart_bridge/uart_bridge.bin"
     COMMENT "Combining application binaries..."
 )
 
