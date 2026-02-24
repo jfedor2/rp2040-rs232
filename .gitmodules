@@ -13,3 +13,6 @@
 [submodule "multi-firmware/hid-remapper"]
 	path = multi-firmware/hid-remapper
 	url = https://github.com/jfedor2/hid-remapper.git
+[submodule "multi-firmware/spaceorb360"]
+	path = multi-firmware/spaceorb360
+	url = https://github.com/jfedor2/spaceorb360.git

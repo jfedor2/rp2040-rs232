@@ -16,7 +16,7 @@ jobs:
           submodules: true
       - name: Fetch submodules in submodules
         run: |
-          for submodule in hid-remapper magellan-spacemouse spaceball-2003 pico-uart-bridge; do cd $submodule; git submodule update --init; cd ..; done
+          for submodule in hid-remapper magellan-spacemouse spaceball-2003 pico-uart-bridge spaceorb360; do cd $submodule; git submodule update --init; cd ..; done
         working-directory: ./multi-firmware
       - name: Install compiler, libraries and tools
         run: |

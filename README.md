@@ -5,7 +5,7 @@
 
 This repository contains design files and firmware for a board that can be used as an RS-232 (serial) to USB adapter. It has an RP2040 chip for the application logic and a MAX3243 chip for the serial interface.
 
-The provided firmware supports classic serial mice, two types of 3D mice (Magellan/SpaceMouse and Spaceball 2003) and can also act as a generic serial-to-USB adapter.
+The provided firmware supports classic serial mice, two types of 3D mice (Magellan/SpaceMouse and Spaceball 2003), the SpaceOrb 360 game controller, and can also act as a generic serial-to-USB adapter.
 
 ## How to make the device
 
@@ -15,7 +15,7 @@ Models for a 3D-printable case can be found in the [3d-printed-case](3d-printed-
 
 ## Firmware
 
-The provided firmware combines four separate projects and lets you choose between them using the DIP switches on the board. This way you can have a multi-purpose adapter without having to re-flash the firmware every time.
+The provided firmware combines five separate projects and lets you choose between them using the DIP switches on the board. This way you can have a multi-purpose adapter without having to re-flash the firmware every time.
 
 To flash the board with the firmware, press and hold the BOOT button, then while holding it press and release the RESET button. A drive named "RPI-RP2" should appear on your computer. Copy the [multi-firmware.uf2](https://github.com/jfedor2/rp2040-rs232/releases/latest/download/multi-firmware.uf2) file to that drive. After it's done flashing the drive will disappear and that's it.
 
@@ -25,6 +25,8 @@ project | description | DIP switch setting
 [spaceball-2003](https://github.com/jfedor2/spaceball-2003) | Lets you use a Spaceball 2003 with modern software | off-off-ON-off
 [magellan-spacemouse](https://github.com/jfedor2/magellan-spacemouse) | Lets you use a serial Magellan/SpaceMouse with modern software | off-off-ON-ON
 [pico-uart-bridge](https://github.com/Noltari/pico-uart-bridge) | Generic USB-to-serial bridge | off-ON-off-off
+[spaceorb360](https://github.com/jfedor2/spaceorb360)<br>(spacemouse) | Lets you use a SpaceOrb 360 with modern CAD software | off-ON-off-ON
+[spaceorb360](https://github.com/jfedor2/spaceorb360)<br>(joystick) | Lets you use a SpaceOrb 360 with games like Descent | off-ON-ON-off
 
 You can of course use any other firmware meant for the RP2040 chip if you want.
 

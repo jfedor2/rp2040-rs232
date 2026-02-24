@@ -57,16 +57,24 @@ set(APP3_OFFSET 0x10050000)
 set(APP3_LENGTH 64k)
 set(APP4_OFFSET 0x10060000)
 set(APP4_LENGTH 64k)
+set(APP5_OFFSET 0x10070000)
+set(APP5_LENGTH 64k)
+set(APP6_OFFSET 0x10080000)
+set(APP6_LENGTH 64k)
 
 target_compile_definitions(dispatcher PUBLIC APP1_START_ADDRESS=${APP1_OFFSET})
 target_compile_definitions(dispatcher PUBLIC APP2_START_ADDRESS=${APP2_OFFSET})
 target_compile_definitions(dispatcher PUBLIC APP3_START_ADDRESS=${APP3_OFFSET})
 target_compile_definitions(dispatcher PUBLIC APP4_START_ADDRESS=${APP4_OFFSET})
+target_compile_definitions(dispatcher PUBLIC APP5_START_ADDRESS=${APP5_OFFSET})
+target_compile_definitions(dispatcher PUBLIC APP6_START_ADDRESS=${APP6_OFFSET})
 
 setup_relocated_pico_app(${CMAKE_CURRENT_SOURCE_DIR}/hid-remapper/firmware remapper_serial ${APP1_OFFSET} ${APP1_LENGTH})
 setup_relocated_pico_app(${CMAKE_CURRENT_SOURCE_DIR}/spaceball-2003 spaceball ${APP2_OFFSET} ${APP2_LENGTH})
 setup_relocated_pico_app(${CMAKE_CURRENT_SOURCE_DIR}/magellan-spacemouse magellan ${APP3_OFFSET} ${APP3_LENGTH})
 setup_relocated_pico_app(${CMAKE_CURRENT_SOURCE_DIR}/pico-uart-bridge uart_bridge ${APP4_OFFSET} ${APP4_LENGTH})
+setup_relocated_pico_app(${CMAKE_CURRENT_SOURCE_DIR}/spaceorb360 spaceorb ${APP5_OFFSET} ${APP5_LENGTH})
+setup_relocated_pico_app(${CMAKE_CURRENT_SOURCE_DIR}/spaceorb360 spaceorb_joystick ${APP6_OFFSET} ${APP6_LENGTH})
 
 set(COMBINED_BIN_FILE "${CMAKE_BINARY_DIR}/multi-firmware.bin")
 set(COMBINED_UF2_FILE "${CMAKE_BINARY_DIR}/multi-firmware.uf2")
@@ -80,12 +88,16 @@ add_custom_command(
         --image spaceball/spaceball.bin@${APP2_OFFSET}
         --image magellan/magellan.bin@${APP3_OFFSET}
         --image uart_bridge/uart_bridge.bin@${APP4_OFFSET}
+        --image spaceorb/spaceorb.bin@${APP5_OFFSET}
+        --image spaceorb_joystick/spaceorb_joystick.bin@${APP6_OFFSET}
     DEPENDS
         dispatcher "${CMAKE_CURRENT_BINARY_DIR}/dispatcher.bin"
         remapper_serial "${CMAKE_CURRENT_BINARY_DIR}/remapper_serial/remapper_serial.bin"
         spaceball "${CMAKE_CURRENT_BINARY_DIR}/spaceball/spaceball.bin"
         magellan "${CMAKE_CURRENT_BINARY_DIR}/magellan/magellan.bin"
         uart_bridge "${CMAKE_CURRENT_BINARY_DIR}/uart_bridge/uart_bridge.bin"
+        spaceorb "${CMAKE_CURRENT_BINARY_DIR}/spaceorb/spaceorb.bin"
+        spaceorb_joystick "${CMAKE_CURRENT_BINARY_DIR}/spaceorb_joystick/spaceorb_joystick.bin"
     COMMENT "Combining application binaries..."
 )
 

@@ -10,6 +10,8 @@
 #define APP2_PIN_STATE (0b0010 << 22)
 #define APP3_PIN_STATE (0b0011 << 22)
 #define APP4_PIN_STATE (0b0100 << 22)
+#define APP5_PIN_STATE (0b0101 << 22)
+#define APP6_PIN_STATE (0b0110 << 22)
 
 typedef void (*app_entry_t)(void);
 
@@ -63,6 +65,10 @@ int main() {
         target_app_address = APP3_START_ADDRESS;
     } else if (pin_state == APP4_PIN_STATE) {
         target_app_address = APP4_START_ADDRESS;
+    } else if (pin_state == APP5_PIN_STATE) {
+        target_app_address = APP5_START_ADDRESS;
+    } else if (pin_state == APP6_PIN_STATE) {
+        target_app_address = APP6_START_ADDRESS;
     } else {
         target_app_address = APP1_START_ADDRESS;
     }
