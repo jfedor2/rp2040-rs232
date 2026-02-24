@@ -21,10 +21,10 @@ To flash the board with the firmware, press and hold the BOOT button, then while
 
 project | description | DIP switch setting
 ------- | ----------- | ------------------
-[HID Remapper](https://github.com/jfedor2/hid-remapper) | Adapts classic serial mice to USB | OFF-OFF-OFF-ON
-[spaceball-2003](https://github.com/jfedor2/spaceball-2003) | Lets you use a Spaceball 2003 with modern software | OFF-OFF-ON-OFF
-[magellan-spacemouse](https://github.com/jfedor2/magellan-spacemouse) | Lets you use a serial Magellan/SpaceMouse with modern software | OFF-OFF-ON-ON
-[pico-uart-bridge](https://github.com/Noltari/pico-uart-bridge) | Generic USB-to-serial bridge | OFF-ON-OFF-OFF
+[HID Remapper](https://github.com/jfedor2/hid-remapper) | Adapts classic serial mice to USB | off-off-off-ON
+[spaceball-2003](https://github.com/jfedor2/spaceball-2003) | Lets you use a Spaceball 2003 with modern software | off-off-ON-off
+[magellan-spacemouse](https://github.com/jfedor2/magellan-spacemouse) | Lets you use a serial Magellan/SpaceMouse with modern software | off-off-ON-ON
+[pico-uart-bridge](https://github.com/Noltari/pico-uart-bridge) | Generic USB-to-serial bridge | off-ON-off-off
 
 You can of course use any other firmware meant for the RP2040 chip if you want.
 
