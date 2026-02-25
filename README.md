@@ -41,7 +41,7 @@ sudo apt install gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-ea
 git clone https://github.com/jfedor2/rp2040-rs232.git
 cd rp2040-rs232/multi-firmware
 git submodule update --init
-for submodule in hid-remapper magellan-spacemouse spaceball-2003 pico-uart-bridge
+for submodule in hid-remapper magellan-spacemouse spaceball-2003 pico-uart-bridge spaceorb360
 do
 cd $submodule; git submodule update --init; cd ..
 done
